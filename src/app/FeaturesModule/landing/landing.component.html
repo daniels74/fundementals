@@ -1,0 +1,7 @@
+<div class="landing-container">
+  <div class="users-list">
+    <div *ngFor="let user of users | async">
+      <app-card [user]="user"></app-card>
+    </div>
+  </div>
+</div>
