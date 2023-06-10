@@ -31,17 +31,16 @@
             matInput
             [formControl]="name"
             [errorStateMatcher]="matcher"
-            placeholder="Ex. pat@example.com"
             class="input-box"
           />
 
-          <mat-hint>Name</mat-hint>
+          <!-- <mat-hint>Name:</mat-hint> -->
 
           <mat-error
-            *ngIf="name.hasError('userEmail') && !name.hasError('required')"
+            *ngIf="name.hasError('name') && !name.hasError('required')"
             class="validator-color"
           >
-            Please enter a valid email address
+            Please enter a name
           </mat-error>
 
           <mat-error *ngIf="name.hasError('required')" class="validator-color">
@@ -51,31 +50,22 @@
 
         <!-- <input type="text" class="text-input" /> -->
         <mat-form-field class="example-full-width">
-          <mat-label>Password</mat-label>
+          <mat-label>Message</mat-label>
 
           <input
-            type="password"
+            type="message"
             matInput
             [formControl]="message"
             [errorStateMatcher]="matcher"
-            placeholder="Password"
           />
 
-          <mat-hint>Enter Password</mat-hint>
+          <!-- <mat-hint>Message:</mat-hint> -->
 
           <mat-error
             *ngIf="message.hasError('message') && !message.hasError('required')"
             class="validator-color"
           >
-            Please enter password.
-          </mat-error>
-
-          <mat-error
-            *ngIf="message.hasError('required')"
-            class="validator-color"
-          >
-            Please enter a valid password. Password is
-            <strong>required</strong>
+            Enter a message.
           </mat-error>
         </mat-form-field>
       </div>
